@@ -1,0 +1,21 @@
+[
+	{
+		"name"       : "jms",
+		"script"     : "./bin/jms.js",
+		"instances"  : "1",
+		"args"       : "['--config', 'live']",
+		"error_file" : "/var/log/jms/jms-err.log",
+		"out_file"   : "/var/log/jms/jms-out.log",
+		"pid_file"   : "/var/run/jms.pid",
+		"exec_mode"  : "cluster_mode"
+	},
+	{
+		"name"       : "jms-monit",
+		"script"     : "./lib/monitor.js",
+		"instances"  : "1",
+		"error_file" : "/var/log/jms/jms-monit-err.log",
+		"out_file"   : "/var/log/jms/jms-monit-out.log",
+		"pid_file"   : "/var/run/jms-monit.pid",
+		"exec_mode"  : "fork_mode"
+	}
+]
