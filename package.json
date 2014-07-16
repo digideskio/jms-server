@@ -21,16 +21,12 @@
 	"jms-ustreamlocales": "0.1.11",
 
     "async": "latest",
-
     "lodash": "latest",
     "minimist": "latest",
     "npmlog": "latest",
     "pm2-interface": "latest",
     "redis": "latest",
-
-
     "stream-combiner": "latest",
-
 	"graphite": "latest"
   },
   "devDependencies": {
