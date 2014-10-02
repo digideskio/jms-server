@@ -24,7 +24,7 @@ npm install --production
 RET=$?
 
 if [ $RET == 0 ]; then
-    node ./debug/deployment.js
+    node ./lib/debug/deployment.js --config live
     RET=eval $RESTART
 fi
 
