@@ -3,8 +3,7 @@
 //var heapdump = require('heapdump');
 
 var paths    = require('../lib/paths');
-var ModuleServer = require(paths.libdir + '/server/moduleserver');
+var server = require(paths.libdir + '/server');
 
-var argv = require('minimist')(process.argv.slice(2));
+server();
 
-var server = new ModuleServer(function () {});
