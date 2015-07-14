@@ -20,9 +20,13 @@
     "airbrake": "^0.3.8",
     "async": "latest",
     "boom": "^2.8.0",
+    "catbox": "^4.3.0",
+    "catbox-redis": "^1.0.5",
     "graphite": "latest",
     "hapi": "^8.6.1",
     "jms-config": "0.0.16",
+    "jms-server-cache": "^1.0.1",
+    "jms-server-modulerequest": "latest",
     "jms-ustreamlocales": "0.1.11",
     "lodash": "latest",
     "minimist": "latest",
@@ -39,7 +43,12 @@
   "engines": {
     "node": ">= 0.10"
   },
+  "publishConfig": {
+    "registry": "http://sjc-npm-cache.ustream.tv:4873",
+    "username": "ustream"
+  },
   "scripts": {
-    "test": "mocha --ui tdd --config test tests/*.js"
+    "test": "mocha --ui tdd --config test tests/*.js",
+    "start": "node bin/jms.js --config local"
   }
 }
