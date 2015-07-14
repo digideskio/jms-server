@@ -25,7 +25,7 @@
     "graphite": "latest",
     "hapi": "^8.6.1",
     "jms-config": "0.0.16",
-    "jms-server-cache": "^1.0.1",
+    "jms-server-cache": "latest",
     "jms-server-modulerequest": "latest",
     "jms-ustreamlocales": "0.1.11",
     "lodash": "latest",
