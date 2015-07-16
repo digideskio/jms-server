@@ -21,6 +21,7 @@
     "jms-config": "0.5.0",
     "jms-server-cache": "latest",
     "jms-server-modulerequest": "latest",
+    "jms-storage": "latest",
     "jms-ustreamlocales": "0.1.11",
     "airbrake": "^0.3.8",
     "async": "latest",
@@ -32,7 +33,7 @@
     "lodash": "latest",
     "minimist": "latest",
     "npmlog": "latest",
-    "redis": "latest",
+
     "stream-combiner": "latest"
   },
   "devDependencies": {
