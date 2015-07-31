@@ -1,3 +1,3 @@
 //var heapdump = require('heapdump');
-var server = require('../lib/server')();
+var server = require('../server')();
 
