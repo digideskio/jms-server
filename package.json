@@ -18,23 +18,22 @@
     "url": "git@git-repos.ustream-adm.in:nec/jms.git"
   },
   "dependencies": {
-    "jms-config": "0.5.2",
+    "jms-config": "0.6.1",
     "jms-storage": "latest",
     "jms-server-cache": "latest",
     "jms-server-modulerequest": "latest",
     "jms-ustreamlocales": "0.1.11",
-    "airbrake": "^0.3.8",
-    "async": "latest",
-    "boom": "^2.8.0",
+    "hapi": "^8.6.1",
     "catbox": "^4.3.0",
     "catbox-redis": "^1.0.5",
-    "graphite": "latest",
-    "hapi": "^8.6.1",
+    "boom": "^2.8.0",
+    "async": "latest",
     "lodash": "latest",
+    "stream-combiner": "latest",
     "minimist": "latest",
     "npmlog": "latest",
-
-    "stream-combiner": "latest"
+    "airbrake": "^0.3.8",
+    "graphite": "latest"
   },
   "devDependencies": {
     "rewire": "latest",

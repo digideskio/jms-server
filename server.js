@@ -1,16 +1,19 @@
-var Hapi = require('hapi');
-var config = require('jms-config');
-var paths = require('./paths');
+require('app-module-path').addPath(__dirname.replace('/lib', ''));
 
-var Boom = require('boom');
+/**
+ *
+ * TODO
+ *
+ */
 
-var responsehandler = require(paths.libdir + '/server/handler');
-var statushandler  = require(paths.libdir + '/server/status');
-var log            = require(paths.libdir + '/debug/log');
 
-var errbit         = require(paths.libdir + '/debug/errbit')('moduleserver');
+var Hapi          = require('hapi');
+var config        = require('jms-config');
 
-var netConf        = config.network;
+var log           = require('lib/debug/log');
+var errbit        = require('lib/debug/errbit')('moduleserver');
+
+var netConf       = config.network;
 
 var serverOptions = {
 	app: config,
@@ -31,17 +34,9 @@ server.connection({
 	port: netConf.port
 });
 
-
-
-/*
-todo:
-
- */
-
-
-/*
- internal plugins
-*/
+//
+// internal plugins
+//
 
 server.register({
 		register: require('jms-server-modulerequest')
@@ -59,52 +54,9 @@ server.register({
 	}
 );
 
-
-
-
-
-var stat = function (server, options, next) {
-
-	server.ext('onPreHandler', function (request, reply) {
-		console.log('onPreHandler' );
-
-		reply.continue();
-	})
-
-	server.ext('onPostHandler', function (request, reply) {
-		console.log('onPostHandler' );
-
-		reply.continue();
 //
-	})
-
-	server.ext('onPreResponse', function (request, reply) {
-		console.log('onPreResponse' );
-
-		reply.continue();
-	})
-
-	next();
-}
-
-stat.attributes = {
-	name: 'stats',
-	version: '1.0.0'
-}
-
-/*
-server.register({
-	register: stat,
-	options: {
-		log: log,
-		storage: storage,
-		config: config
-	}
-}, function (err) {
-	if (err) log.error('server', err);
-});
-
-*/
+// methods
+//
 
 server.method(
 	'storage',
@@ -116,11 +68,15 @@ server.method(
 
 server.method(
 	'getModules',
-	require(paths.libdir + '/server/util/getmodules'),
+	require('lib/method/getmodules'),
 	{
 		bind: server
 	}
 );
+
+//
+// debug & logging
+//
 
 server.on('log', function (event, tags) {
 
@@ -136,9 +92,10 @@ server.on('log', function (event, tags) {
 
 });
 
-/*
-	routing
-*/
+//
+// routes
+//
+
 server.route([
 	{
 		method: '*',
@@ -150,12 +107,12 @@ server.route([
 	{
 		method: 'GET',
 		path: '/status',
-		handler: statushandler.bind(server)
+		handler: require('lib/server/status').bind(server)
 	},
 	{
 		method: 'GET',
 		path: '/js/{source}/{stage}/{modules*}',
-		handler: responsehandler
+		handler: require('lib/server/handler')
 	}
 ]);
 
