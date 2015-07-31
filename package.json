@@ -18,7 +18,7 @@
     "url": "git@git-repos.ustream-adm.in:nec/jms.git"
   },
   "dependencies": {
-    "jms-config": "0.6.0",
+    "jms-config": "0.6.1",
     "jms-storage": "latest",
     "jms-server-cache": "latest",
     "jms-server-modulerequest": "latest",
