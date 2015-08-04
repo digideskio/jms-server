@@ -4,6 +4,8 @@ require('app-module-path').addPath(__dirname.replace('/lib', ''));
  *
  * TODO
  *
+ * API (/api/getModuleByHash, /api/getHashOfModule etc)
+ *
  */
 
 
@@ -28,6 +30,8 @@ if (config.cache.enabled) {
 }
 
 var server = new Hapi.Server(serverOptions);
+
+console.log(config );
 
 server.connection({
 	address: netConf.host,
@@ -57,13 +61,15 @@ server.register({
 //
 // methods
 //
-server.method(
-	'storage',
-	require('jms-storage').use('redis'),
-	{
-		bind: server
-	}
-);
+if (!server.settings.app.context.local) {
+	server.method(
+		'storage',
+		require('jms-storage').use('redis'),
+		{
+			bind: server
+		}
+	);
+}
 
 server.method(
 	'getModules',
@@ -79,6 +85,8 @@ server.method(
 
 server.on('log', function (event, tags) {
 
+	console.log(event, tags );
+	
 	if (tags.verbose) {
 		log.verbose(event.tags.slice(1), event.data);
 	} else if (tags.info) {
@@ -117,6 +125,7 @@ server.route([
 
 module.exports = function () {
 	server.start(function () {
+console.log(arguments );
 		log.info('server','Server running as [' + server.info.host + '] at http://' + server.info.address + ':' + server.info.port + '/');
 	});
 }

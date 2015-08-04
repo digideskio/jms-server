@@ -8,15 +8,10 @@
 
 
 
-FROM    centos:centos6
-
-# Enable EPEL for Node.js
-RUN     rpm -Uvh http://download.fedoraproject.org/pub/epel/6/i386/epel-release-6-8.noarch.rpm
-# Install Node.js and npm
-RUN     yum install -y npm
+FROM    node
 
 # Bundle app source
-COPY . /src
+ADD . /src
 
 # Install app dependencies
 RUN cd /src; npm install --registry http://sjc-npm-cache.ustream.tv:4873
@@ -24,4 +19,4 @@ RUN cd /src; npm install --registry http://sjc-npm-cache.ustream.tv:4873
 # replace this with your application's default port
 EXPOSE 1337
 
-CMD ["node", "/src/bin/jms.js", "--config local"]
+CMD ["node", "/src/bin/jms.js", "--config", "local"]
