@@ -31,8 +31,6 @@ if (config.cache.enabled) {
 
 var server = new Hapi.Server(serverOptions);
 
-console.log(config );
-
 server.connection({
 	address: netConf.host,
 	port: netConf.port
@@ -84,8 +82,6 @@ server.method(
 //
 
 server.on('log', function (event, tags) {
-
-	console.log(event, tags );
 	
 	if (tags.verbose) {
 		log.verbose(event.tags.slice(1), event.data);
@@ -125,7 +121,6 @@ server.route([
 
 module.exports = function () {
 	server.start(function () {
-console.log(arguments );
 		log.info('server','Server running as [' + server.info.host + '] at http://' + server.info.address + ':' + server.info.port + '/');
 	});
 }
