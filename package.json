@@ -30,7 +30,7 @@
     "graceful-fs": "^4.1.2",
     "graphite": "latest",
     "hapi": "^8.6.1",
-    "jms-config": "0.6.1",
+    "jms-config": "0.6.2",
     "jms-server-cache": "latest",
     "jms-server-modulerequest": "latest",
     "jms-storage": "latest",
