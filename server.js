@@ -57,7 +57,6 @@ server.register({
 //
 // methods
 //
-
 server.method(
 	'storage',
 	require('jms-storage').use('redis'),
