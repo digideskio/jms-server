@@ -8,6 +8,8 @@ require('app-module-path').addPath(__dirname.replace('/lib', ''));
  * pull in external plugins more nicer way
  *
  *
+ * API (/api/getModuleByHash, /api/getHashOfModule etc)
+ *
  */
 
 
@@ -61,14 +63,15 @@ server.register({
 //
 // methods
 //
-
-server.method(
-	'storage',
-	require('jms-storage').use('redis'),
-	{
-		bind: server
-	}
-);
+if (!server.settings.app.context.local) {
+	server.method(
+		'storage',
+		require('jms-storage').use('redis'),
+		{
+			bind: server
+		}
+	);
+}
 
 server.method(
 	'getModules',
@@ -83,7 +86,7 @@ server.method(
 //
 
 server.on('log', function (event, tags) {
-
+	
 	if (tags.verbose) {
 		log.verbose(event.tags.slice(1), event.data);
 	} else if (tags.info) {
