@@ -2,9 +2,13 @@ require('app-module-path').addPath(__dirname.replace('/lib', ''));
 
 /**
  *
+ * this is just a notepad place
+ *
  * TODO
  *
- * API (/api/getModuleByHash, /api/getHashOfModule etc)
+ * 	- pull in external plugins more nicer way
+ * 	- API (/api/getModuleByHash, /api/getHashOfModule etc)
+ * 	- client-inclusive request
  *
  */
 
