@@ -39,6 +39,7 @@
     "lodash": "latest",
     "minimist": "latest",
     "npmlog": "latest",
+    "source-map": "^0.4.4",
     "stream-combiner": "latest"
   },
   "devDependencies": {

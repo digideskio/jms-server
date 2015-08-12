@@ -15,6 +15,7 @@ init_docker() {
     echo "Init docker vm"
     boot2docker init
 
+
     echo "NAT port to localhost"
     vboxmanage modifyvm boot2docker-vm --natpf1 "http,tcp,127.0.0.1,1337,,1337"
 
