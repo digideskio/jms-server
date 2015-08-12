@@ -169,10 +169,6 @@
         }
     },
     "definitions": {
-        "ModuleName": {
-            "type": "string",
-            "pattern": "/([a-zA-Z0-9\\/-_]*)/"
-        },
         "Module": {
             "properties": {
                 "dependencies": {
