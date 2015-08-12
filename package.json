@@ -40,7 +40,8 @@
     "minimist": "latest",
     "npmlog": "latest",
     "source-map": "^0.4.4",
-    "stream-combiner": "latest"
+    "stream-combiner": "latest",
+    "swaggerize-hapi": "^1.0.0-rc.3"
   },
   "devDependencies": {
     "rewire": "latest",

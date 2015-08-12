@@ -15,7 +15,7 @@ require('app-module-path').addPath(__dirname.replace('/lib', ''));
 
 var Hapi          = require('hapi');
 var config        = require('jms-config');
-
+var Path          = require('path');
 var log           = require('lib/debug/log');
 var errbit        = require('lib/debug/errbit')('moduleserver');
 
@@ -59,6 +59,22 @@ server.register({
 		if (err) log.error('server', err);
 	}
 );
+
+var Swaggerize = require('swaggerize-hapi');
+
+server.register({
+		register: Swaggerize,
+		options: {
+			api: Path.resolve('./jms-api.json'),
+			handlers: Path.resolve('./lib/api')
+		}
+	},
+	function (err) {
+		if (err) console.log(err );
+	}
+);
+
+
 
 //
 // methods
