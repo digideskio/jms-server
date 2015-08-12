@@ -166,62 +166,6 @@
                     }
                 }
             }
-        },
-        "/module/deps/{source}/{stage}/{module}": {
-            "get": {
-                "summary": "Get dependencies of a module",
-                "description": "Returns a list of modules that the given module is depending on",
-                "parameters": [
-                    {
-                        "name": "source",
-                        "in": "path",
-                        "description": "Source id",
-                        "required": true,
-                        "type": "string"
-                    },
-                    {
-                        "name": "stage",
-                        "in": "path",
-                        "description": "Version stage",
-                        "required": true,
-                        "type": "string"
-                    },
-                    {
-                        "name": "module",
-                        "in": "path",
-                        "description": "Module name",
-                        "required": true,
-                        "type": "string",
-                        "pattern": "([a-zA-Z0-9\\/,_]*)"
-                    }
-                ],
-                "tags": [
-                    "Module"
-                ],
-                "responses": {
-                    "200": {
-                        "description": "Module object",
-                        "schema": {
-                            "type": "array",
-                            "items": {
-                                "$ref": "#/definitions/Module"
-                            }
-                        }
-                    },
-                    "404": {
-                        "description": "Not found",
-                        "schema": {
-                            "$ref": "#/definitions/Error"
-                        }
-                    },
-                    "default": {
-                        "description": "Unexpected error",
-                        "schema": {
-                            "$ref": "#/definitions/Error"
-                        }
-                    }
-                }
-            }
         }
     },
     "definitions": {
