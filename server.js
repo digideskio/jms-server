@@ -119,12 +119,12 @@ server.route([
 	{
 		method: 'GET',
 		path: '/status',
-		handler: require('lib/server/status').bind(server)
+		handler: require('lib/handlers/status').bind(server)
 	},
 	{
 		method: 'GET',
 		path: '/js/{source}/{stage}/{modules*}',
-		handler: require('lib/server/handler')
+		handler: require('lib/handlers/module')
 	}
 ]);
 
