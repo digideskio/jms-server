@@ -15,7 +15,7 @@
   ],
   "repository": {
     "type": "git",
-    "url": "git@git-repos.ustream-adm.in:nec/jms.git"
+    "url": "git@git-repos.ustream-adm.in:jms/jms-server.git"
   },
   "dependencies": {
     "airbrake": "^0.3.8",
@@ -32,6 +32,7 @@
     "graphite": "latest",
     "hapi": "^8.6.1",
     "jms-config": "0.6.6",
+    "jms-api": "1.1.0",
     "jms-server-cache": "latest",
     "jms-server-modulerequest": "latest",
     "jms-storage": "latest",
@@ -40,8 +41,7 @@
     "minimist": "latest",
     "npmlog": "latest",
     "source-map": "^0.4.4",
-    "stream-combiner": "latest",
-    "swaggerize-hapi": "^1.0.0-rc.3"
+    "stream-combiner": "latest"
   },
   "devDependencies": {
     "rewire": "latest",
