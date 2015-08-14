@@ -7,8 +7,7 @@ require('app-module-path').addPath(__dirname.replace('/lib', ''));
  * TODO
  *
  * 	- pull in external plugins more nicer way
- * 	- API (/api/getModuleByHash, /api/getHashOfModule etc)
- * 	- client-inclusive request
+ *  - upgrade module hash:  name+mtime+source+stage
  *
  */
 
@@ -45,7 +44,7 @@ server.connection({
 //
 
 server.register({
-		register: require('jms-server-modulerequest')
+		register: require('lib/modulerequest')
 	},
 	function (err) {
 		if (err) log.error('server', err);
@@ -124,6 +123,11 @@ server.route([
 	{
 		method: 'GET',
 		path: '/js/{source}/{stage}/{modules*}',
+		handler: require('lib/handlers/module')
+	},
+	{
+		method: 'GET',
+		path: '/js/{modules*}',
 		handler: require('lib/handlers/module')
 	}
 ]);
