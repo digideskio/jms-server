@@ -16,8 +16,8 @@ init_docker() {
     boot2docker init
 
 
-    echo "NAT port to localhost"
-    vboxmanage modifyvm boot2docker-vm --natpf1 "http,tcp,127.0.0.1,1337,,1337"
+    #echo "NAT port to localhost"
+    #vboxmanage modifyvm boot2docker-vm --natpf1 "http,tcp,127.0.0.1,1337,,1337"
 
     echo "Boot docker vm with ustream repo"
     boot2docker --vbox-share="/www/ustream.tv/git=ustream" up
@@ -27,6 +27,9 @@ init_docker() {
 
     echo "Init shell"
     $(/usr/local/bin/boot2docker shellinit)
+
+    echo "Port forwarding using ssh"
+    boot2docker ssh -f -nNTL *:1337:localhost:1337 > /dev/null
 }
 
 build_it() {
@@ -42,13 +45,27 @@ run_it() {
 
 start_it() {
     echo "Starting container..."
-    docker start jms
+    if is_running
+        then
+            echo "Already running"
+        else
+            docker start jms
+        fi
 }
 
+is_running() {
+    status="`docker inspect jms |grep Running | awk '{print $2}'|sed s/\,//g`"
+    [ "$status" = "true" ]
+}
 
 stop_it() {
     echo "Stopping container..."
-    docker stop jms
+    if is_running
+    then
+        docker stop jms
+    else
+        echo "Not running"
+    fi
 }
 
 rebuild_it() {
@@ -61,7 +78,7 @@ rebuild_it() {
 
 restart_it() {
     echo "Restarting container..."
-    docker stop jms
+    stop_it
     docker rm jms
     run_it
 }
@@ -72,7 +89,7 @@ status_app() {
 
 burn_it() {
     echo "Some men just want to watch the world burn..."
-    docker stop jms
+    stop_it
     docker rm jms
     boot2docker poweroff
     boot2docker delete
