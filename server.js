@@ -52,7 +52,7 @@ server.register({
 );
 
 server.register({
-		register: require('jms-server-cache')
+		register: require('lib/cache')
 	},
 	function (err) {
 		if (err) log.error('server', err);
