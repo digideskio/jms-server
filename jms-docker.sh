@@ -12,9 +12,9 @@ USAGE="Usage: $0 {start|stop|restart|status|rebuild|teardown|init}"
 
 
 init_docker() {
+
     echo "Init docker vm"
     boot2docker init
-
 
     #echo "NAT port to localhost"
     #vboxmanage modifyvm boot2docker-vm --natpf1 "http,tcp,127.0.0.1,1337,,1337"
@@ -30,12 +30,15 @@ init_docker() {
 
     echo "Port forwarding using ssh"
     boot2docker ssh -f -nNTL *:1337:localhost:1337 > /dev/null
+
 }
+
 
 build_it() {
     echo "Building container"
     docker build -t necccc/jms-server .
 }
+
 
 run_it() {
     echo "Running container"
@@ -53,10 +56,6 @@ start_it() {
         fi
 }
 
-is_running() {
-    status="`docker inspect jms |grep Running | awk '{print $2}'|sed s/\,//g`"
-    [ "$status" = "true" ]
-}
 
 stop_it() {
     echo "Stopping container..."
@@ -68,6 +67,7 @@ stop_it() {
     fi
 }
 
+
 rebuild_it() {
     echo "Initiated rebuild"
     stop_it
@@ -76,6 +76,7 @@ rebuild_it() {
     run_it
 }
 
+
 restart_it() {
     echo "Restarting container..."
     stop_it
@@ -83,8 +84,31 @@ restart_it() {
     run_it
 }
 
+
+is_running() {
+    status="`docker inspect jms |grep Running | awk '{print $2}'|sed s/\,//g`"
+    [ "$status" = "true" ]
+}
+
+
+is_intialized() {
+    state="`boot2docker info|grep State|awk '{ print $2 }'|sed s/\\"//g|sed s/\,//g`"
+    [ "$state" = "running" ]
+}
+
 status_app() {
     echo "Status"
+}
+
+init() {
+    if is_intialized
+    then
+        echo "Already initialized"
+    else
+        init_docker
+        build_it
+        run_it
+    fi
 }
 
 burn_it() {
@@ -121,9 +145,7 @@ case "$1" in
     ;;
 
     init)
-        init_docker
-        build_it
-        run_it
+        init
     ;;
 
     *)
