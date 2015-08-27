@@ -18,6 +18,7 @@
     "url": "git@git-repos.ustream-adm.in:jms/jms-server.git"
   },
   "dependencies": {
+    "airbrake": "^0.3.8",
     "app-module-path": "^1.0.3",
     "async": "latest",
     "boom": "^2.8.0",
@@ -29,8 +30,8 @@
     "estraverse": "^4.1.0",
     "graceful-fs": "^4.1.2",
     "hapi": "^8.6.1",
-    "jms-config": "~1.1.0",
     "jms-api": "2.1.2",
+    "jms-config": "~1.1.0",
     "jms-storage": "^3.1.0",
     "lodash": "latest",
     "minimist": "latest",
