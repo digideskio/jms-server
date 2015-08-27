@@ -18,7 +18,6 @@
     "url": "git@git-repos.ustream-adm.in:jms/jms-server.git"
   },
   "dependencies": {
-    "airbrake": "^0.3.8",
     "app-module-path": "^1.0.3",
     "async": "latest",
     "boom": "^2.8.0",
@@ -55,6 +54,7 @@
     "username": "ustream"
   },
   "scripts": {
+    "postinstall": "node hooks/npm.postinstall.js"
     "test": "mocha --ui tdd --config test tests/*.js",
     "start": "node bin/jms.js --config local"
   }
