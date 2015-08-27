@@ -16,8 +16,6 @@ var Hapi          = require('hapi');
 var config        = require('jms-config');
 
 var log           = require('lib/debug/log');
-var errbit        = require('lib/debug/errbit')('moduleserver');
-
 var netConf       = config.network;
 
 var serverOptions = {
