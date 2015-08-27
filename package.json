@@ -4,7 +4,7 @@
   "description": "AMD JS module server with server-side package handling",
   "author": "_Nec <nec@ustream.tv>",
   "license": "MIT",
-  "main": "bin/jms.js",
+  "main": "server.js",
   "keywords": [
     "javascript",
     "module",
