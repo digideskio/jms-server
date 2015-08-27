@@ -6,21 +6,18 @@ require('app-module-path').addPath(__dirname.replace('/lib', ''));
  *
  * TODO
  *
- * 	- pull in external plugins more nicer way
- *  - upgrade module hash:  name+mtime+source+stage
  *
  */
 
 
 var Hapi          = require('hapi');
-//var config        = require('jms-config');
-
 var log           = require('lib/debug/log');
 
-
 function init (config) {
-	var netConf       = config.network;
+	var netConf = config.network;
 
+
+	config.version = require('./package.json').version;
 
 	var serverOptions = {
 		app: config,
@@ -139,6 +136,8 @@ function init (config) {
 
 
 module.exports = function (config) {
+
+	log = log(config);
 
 	var server = init(config);
 
