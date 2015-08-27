@@ -1,3 +1,5 @@
 //var heapdump = require('heapdump');
-var server = require('../server')();
+var config = require('jms-config');
+
+var server = require('../server')(config);
 
