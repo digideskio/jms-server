@@ -26,7 +26,7 @@ function init (config) {
 		}
 	}
 
-	if (config.cache.enabled) {
+	if (config.cache && config.cache.enabled) {
 		config.cache.engine = require(config.cache.engine);
 		serverOptions.cache = config.cache;
 	}
@@ -49,19 +49,20 @@ function init (config) {
 			if (err) log.error('server', err);
 		}
 	);
-
-	server.register({
-			register: require('lib/cache')
-		},
-		function (err) {
-			if (err) log.error('server', err);
-		}
-	);
+	if (config.cache && config.cache.enabled) {
+		server.register({
+				register: require('lib/cache')
+			},
+			function (err) {
+				if (err) log.error('server', err);
+			}
+		);
+	}
 
 //
 // methods
 //
-	if (!server.settings.app.context.local) {
+	if (!server.settings.app.context || !(server.settings.app.context && server.settings.app.context.local)) {
 		server.method(
 			'storage',
 			require('jms-storage').use('redis'),
