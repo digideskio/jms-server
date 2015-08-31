@@ -5,7 +5,7 @@ require('app-module-path').addPath(__dirname.replace('/lib', ''));
  * this is just a notepad place
  *
  * TODO
- *
+ * clientlib bundle + custom invocation
  *
  */
 

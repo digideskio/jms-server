@@ -1,6 +1,6 @@
 # JavaScript Module Server
 
-An AMD module server for Javascript, based on Hapijs.
+An AMD module server for Javascript, that handles dependencies and bundles on-the-fly using negative loading, based on Hapijs.
 
 ### Usage
 
@@ -66,6 +66,8 @@ context
 
 ### How it works
 
+
+
 ### Client
 
 client embed
@@ -75,6 +77,8 @@ client bundle
 hash mapping
 
 multiple codebase scopes
+
+### Local development
 
 
 ### API
