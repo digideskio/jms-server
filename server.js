@@ -5,7 +5,7 @@ require('app-module-path').addPath(__dirname.replace('/lib', ''));
  * this is just a notepad place
  *
  * TODO
- *
+ * clientlib bundle + custom invocation
  *
  */
 
@@ -145,4 +145,6 @@ module.exports = function (config) {
 	server.start(function () {
 		log.info('server','Server running as [' + server.info.host + '] at http://' + server.info.address + ':' + server.info.port + '/');
 	});
+
+	return server;
 }
