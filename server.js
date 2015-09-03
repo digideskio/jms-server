@@ -7,6 +7,12 @@ require('app-module-path').addPath(__dirname.replace('/lib', ''));
  * TODO
  * clientlib bundle + custom invocation
  *
+ * travisci intergration tests with redis
+ *  - populate redis
+ *  - start server
+ *  - make http calls on localhost
+ *  - stop server, flushdb
+ *
  */
 
 
@@ -65,7 +71,7 @@ function init (config) {
 	if (!server.settings.app.context || !(server.settings.app.context && server.settings.app.context.local)) {
 		server.method(
 			'storage',
-			require('jms-storage').use('redis'),
+			require('jms-storage').use('redis'), // todo - use config key pls
 			{
 				bind: server
 			}
