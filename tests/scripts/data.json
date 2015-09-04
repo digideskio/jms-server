@@ -5,23 +5,26 @@
       "lib/util": "hash1112"
     },
     "map:foobar:master": {
-      "key": "value",
-      "key2": "value2"
+      "app/bar": "hash2111",
+      "lib/util": "hash2112"
     }
   },
   "versions": {
     "versions:test:master": {
-      "app/foo": "versions",
-      "lib/util": "versions"
+      "app/foo": "[\"hash1111\"]",
+      "lib/util": "[\"hash1112\"]"
     },
     "versions:foobar:master": {
-      "app/bar": "versions",
-      "lib/util": "versions"
+      "app/bar": "[\"hash2121\",\"hash2111\"]",
+      "lib/util": "[\"hash2112\"]"
     }
   },
   "source": {
     "hash1111": "{\"sourceId\":\"test\",\"stage\":\"master\",\"module\":\"hash1111\",\"mtime\":\"2015-07-14T15:12:28.000Z\", \"path\":\"/www/app/assets/js/app/foo\",\"source\":\"define('hash1111',[],function(){})\",\"dependencies\":[], \"requirecalls\":[],\"originalSource\":\"define('app/foo',[],function(){})\",\"lines\":1,\"sourceMap\":\"\", \"transitive_dependencies\":[],\"originalModule\":\"app/foo\"}",
-    "hash1112": "{\"sourceId\":\"test\",\"stage\":\"master\",\"module\":\"hash1112\",\"mtime\":\"2015-07-14T15:12:28.000Z\", \"path\":\"/www/app/assets/js/lib/util\",\"source\":\"define('hash1112',[],function(){})\",\"dependencies\":[], \"requirecalls\":[],\"originalSource\":\"define('lib/util',[],function(){})\",\"lines\":1,\"sourceMap\":\"\", \"transitive_dependencies\":[],\"originalModule\":\"lib/util\"}"
+    "hash1112": "{\"sourceId\":\"test\",\"stage\":\"master\",\"module\":\"hash1112\",\"mtime\":\"2015-07-14T15:12:28.000Z\", \"path\":\"/www/app/assets/js/lib/util\",\"source\":\"define('hash1112',[],function(){})\",\"dependencies\":[], \"requirecalls\":[],\"originalSource\":\"define('lib/util',[],function(){})\",\"lines\":1,\"sourceMap\":\"\", \"transitive_dependencies\":[],\"originalModule\":\"lib/util\"}",
+    "hash2111": "{\"sourceId\":\"test\",\"stage\":\"master\",\"module\":\"hash2111\",\"mtime\":\"2015-07-14T15:12:28.000Z\", \"path\":\"/www/app/assets/js/app/bar\",\"source\":\"define('hash2111',['hash2112'],function(a){})\",\"dependencies\":[\"hash2112\"], \"requirecalls\":[],\"originalSource\":\"define('app/foo',['lib/util'],function(util){})\",\"lines\":1,\"sourceMap\":\"\", \"transitive_dependencies\":[\"hash2112\"],\"originalModule\":\"app/bar\"}",
+    "hash2121": "{\"sourceId\":\"test\",\"stage\":\"master\",\"module\":\"hash2121\",\"mtime\":\"2015-07-14T15:12:28.000Z\", \"path\":\"/www/app/assets/js/app/bar\",\"source\":\"define('hash2121',['hash2112'],function(a){a()})\",\"dependencies\":[\"hash2112\"], \"requirecalls\":[],\"originalSource\":\"define('app/foo',['lib/util'],function(util){util()})\",\"lines\":1,\"sourceMap\":\"\", \"transitive_dependencies\":[\"hash2112\"],\"originalModule\":\"app/bar\"}",
+    "hash2112": "{\"sourceId\":\"test\",\"stage\":\"master\",\"module\":\"hash2112\",\"mtime\":\"2015-07-14T15:12:28.000Z\", \"path\":\"/www/app/assets/js/lib/util\",\"source\":\"define('hash2112',[],function(){})\",\"dependencies\":[], \"requirecalls\":[],\"originalSource\":\"define('lib/util',[],function(){})\",\"lines\":1,\"sourceMap\":\"\", \"transitive_dependencies\":[],\"originalModule\":\"lib/util\"}"
   }
 }
 
