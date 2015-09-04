@@ -1,7 +1,8 @@
 {
   "maps": {
     "map:test:master": {
-      "key": "value"
+      "app/foo": "hash1111",
+      "lib/util": "hash1112"
     },
     "map:foobar:master": {
       "key": "value",
@@ -10,15 +11,18 @@
   },
   "versions": {
     "versions:test:master": {
-      "name": "versions"
+      "app/foo": "versions",
+      "lib/util": "versions"
     },
     "versions:foobar:master": {
-      "name": "versions"
+      "app/bar": "versions",
+      "lib/util": "versions"
     }
   },
   "source": {
-    "hash1": "data1",
-    "hash2": "data1",
-    "hash3": "data1"
+    "hash1111": "{\"sourceId\":\"test\",\"stage\":\"master\",\"module\":\"hash1111\",\"mtime\":\"2015-07-14T15:12:28.000Z\", \"path\":\"/www/app/assets/js/app/foo\",\"source\":\"define('hash1111',[],function(){})\",\"dependencies\":[], \"requirecalls\":[],\"originalSource\":\"define('app/foo',[],function(){})\",\"lines\":1,\"sourceMap\":\"\", \"transitive_dependencies\":[],\"originalModule\":\"app/foo\"}",
+    "hash1112": "{\"sourceId\":\"test\",\"stage\":\"master\",\"module\":\"hash1112\",\"mtime\":\"2015-07-14T15:12:28.000Z\", \"path\":\"/www/app/assets/js/lib/util\",\"source\":\"define('hash1112',[],function(){})\",\"dependencies\":[], \"requirecalls\":[],\"originalSource\":\"define('lib/util',[],function(){})\",\"lines\":1,\"sourceMap\":\"\", \"transitive_dependencies\":[],\"originalModule\":\"lib/util\"}"
   }
 }
+
+

@@ -1,3 +1,3 @@
 var jms = require('../../server.js')
 var config  =require('./config.js')
-jms(config)
+var server = jms(config)

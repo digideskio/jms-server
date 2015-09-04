@@ -29,7 +29,7 @@
     "estraverse": "^4.1.0",
     "graceful-fs": "^4.1.2",
     "hapi": "^8.6.1",
-    "jms-api": "2.1.2",
+    "jms-api": "^2.1.2",
     "jms-storage": "^3.1.0",
     "lodash": "latest",
     "minimist": "latest",
@@ -43,6 +43,7 @@
     "grunt-release": "latest",
     "mocha": "latest",
     "redis": "^1.0.0",
+    "request": "^2.61.0",
     "rewire": "latest",
     "sinon": "latest"
   },
