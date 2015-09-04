@@ -45,7 +45,8 @@
     "redis": "^1.0.0",
     "request": "^2.61.0",
     "rewire": "latest",
-    "sinon": "latest"
+    "sinon": "latest",
+    "pre-commit": "latest"
   },
   "engines": {
     "node": ">= 0.10"
@@ -56,5 +57,8 @@
     "unit-tests": "mocha --ui tdd --config test tests/unit/*.js",
     "start": "node bin/jms.js --config local",
     "integration-tests": ". tests/scripts/run.sh"
-  }
+  },
+  "pre-commit": [
+    "test"
+  ]
 }
