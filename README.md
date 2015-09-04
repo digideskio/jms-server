@@ -4,11 +4,11 @@ An AMD module server for Javascript, that handles dependencies and bundles on-th
 
 * [Usage](#usage)
 * [Configuration options](#configuration)
-* [How it works](#how)
+* [How it works](#how-it-works)
 * [Client](#client)
-* [Local development](#local)
-* [API](#api)
-* [Internal modules](#internal)
+* [Local development](#local-development)
+* [API](#api-1)
+* [Internal modules](#internal-modules)
 * [Plugins](#plugins)
 
 ## Usage
