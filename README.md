@@ -1,8 +1,15 @@
 # JavaScript Module Server
 
-[![Build Status](https://travis-ci.org/ustream/jms-server.svg?branch=master)](https://travis-ci.org/ustream/jms-server)
-
 An AMD module server for Javascript, that handles dependencies and bundles on-the-fly using negative loading, based on Hapijs.
+
+* [Usage](#usage)
+* [Configuration options](#configuration)
+* [How it works](#how)
+* [Client](#client)
+* [Local development](#local)
+* [API](#api)
+* [Internal modules](#internal)
+* [Plugins](#plugins)
 
 ## Usage
 
@@ -249,13 +256,12 @@ multiple codebase scopes
 
 ##### Submodules
 
- - jms-storage
- - jms-api
+ - [jms-storage](https://github.com/ustream/jms-storage)
+ - [jms-api](https://github.com/ustream/jms-api)
 
 ##### Plugins
 
-- jms-plugin-example
-- jms-plugin-ustreamlocales
+- [jms-plugin-example](https://github.com/ustream/jms-plugin-example)
 
 ##### Deploying
 
