@@ -1,6 +1,6 @@
 {
   "name": "jms-server",
-  "version": "3.4.4",
+  "version": "3.4.5",
   "description": "JavaScript Module Server for AMD modules, based on HapiJS",
   "author": "_Nec <nec@ustream.tv>",
   "license": "MIT",
