@@ -1,5 +1,7 @@
 # JavaScript Module Server
 
+[![Build Status](https://travis-ci.org/ustream/jms-server.svg?branch=master)](https://travis-ci.org/ustream/jms-server)
+
 An AMD module server for Javascript, that handles dependencies and bundles on-the-fly using negative loading, based on Hapijs.
 
 * [Usage](#usage)
