@@ -170,8 +170,11 @@ suite('api v1', function () {
 				var modules = JSON.parse(body);
 
 				assert.equal(modules.length, 2);
-				assert.equal(modules[0].source , 'test');
-				assert.equal(modules[1].source , 'foobar');
+
+				var sources = [modules[0].source, modules[1].source];
+
+				assert(sources.indexOf('test') > -1);
+				assert(sources.indexOf('foobar') > -1);
 
 				done();
 			})
